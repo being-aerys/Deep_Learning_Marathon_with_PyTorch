@@ -296,3 +296,8 @@ def download_data(source: str,
             os.remove(data_path / target_file)
     
     return image_path
+
+def accuracy_fn(y_true, y_pred):
+    correct = torch.eq(y_true, y_pred).sum().item()
+    acc = (correct / len(y_pred)) * 100 
+    return acc
