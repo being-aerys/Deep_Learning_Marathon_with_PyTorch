@@ -21,3 +21,14 @@ def plot_predictions(train_data, train_labels, test_data, test_labels, test_pred
     # show legends
     plt.legend(prop = {"size" : 8})
 
+import torch
+from timeit import default_timer
+
+def print_training_time(start: float, end: float, device: torch.device = None) -> float:
+    """
+    Prints and returns the difference between the end time and the start time.  
+    """
+    total_time_taken = end - start
+    print(f"Total time take for training: {total_time_taken} seconds.")
+    return total_time_taken
+
