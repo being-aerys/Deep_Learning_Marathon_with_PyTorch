@@ -29,6 +29,6 @@ def print_training_time(start: float, end: float, device: torch.device = None) -
     Prints and returns the difference between the end time and the start time.  
     """
     total_time_taken = end - start
-    print(f"Total time take for training: {total_time_taken} seconds.")
+    print(f"Epoch training time: {round(total_time_taken,3)} seconds.")
     return total_time_taken
 
