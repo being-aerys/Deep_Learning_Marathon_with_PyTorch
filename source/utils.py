@@ -20,7 +20,7 @@ def plot_predictions(train_data, train_labels, test_data, test_labels, test_pred
 
     # show legends
     plt.legend(prop = {"size" : 8})
-
+import random
 import torch
 from timeit import default_timer
 
@@ -145,3 +145,12 @@ def test_step(model: torch.nn.Module,
         print("Avg test loss/batch:", round(avg_test_loss_per_batch,3),", Average test acc/batch:", round(avg_test_acc_per_batch,3))
     
     return avg_test_acc_per_batch, avg_test_loss_per_batch
+
+def set_seeds(seed : int = 42):
+    """
+    Sets seed for different purposes.
+    """
+    random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    
